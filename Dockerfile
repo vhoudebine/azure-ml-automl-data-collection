@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
 
 ENV CONDA_ENV_DIR=/opt/miniconda/envs
 # python installs
-COPY mlflow-model/conda.yaml /tmp/conda.yaml
+COPY conda.yaml /tmp/conda.yaml
 
 RUN conda env create -n userenv -f /tmp/conda.yaml && \
     $CONDA_ENV_DIR/userenv/bin/pip install azureml-automl-runtime==1.56.0
